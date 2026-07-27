@@ -1297,14 +1297,21 @@
   }
   if (sessionStorage.getItem('ageVerified')) closeAge();
 
-  // B2B form
-  function submitB2B() {
-    const inputs = document.querySelectorAll('.b2b-form input, .b2b-form select, .b2b-form textarea');
-    let ok = true;
-    inputs.forEach(i => { if (i.getAttribute('type') !== 'submit' && i.value === '') ok = false; });
-    if (!ok) { alert('Please fill in all fields.'); return; }
+  // B2B form -> Google Sheet + Telegram
+  var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzPIMdjdW5A9AhV_Ce5iWWEvTbXojjFO0-cAMbJqdGSzEiWmbA0pMYuxbXpGAWoy2Bmeg/exec';
+  async function submitB2B() {
+    const form = document.querySelector('.b2b-form');
+    const name = form.querySelector('input[type="text"]').value.trim();
+    const phone = form.querySelector('input[type="tel"]').value.trim();
+    const type = form.querySelector('select').value;
+    const note = form.querySelector('textarea').value.trim();
+    if (!name || !phone) { alert('Please enter your name and phone / Zalo.'); return; }
+    const payload = { name: name, phone: phone, type: type, note: note, source: 'website', lang: document.documentElement.lang || 'vi' };
+    try { await fetch(LEAD_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) }); } catch (e) {}
     alert('Thank you! We will contact you on Zalo within 2 hours. 🍶');
-    inputs.forEach(i => i.value = '');
+    form.querySelector('input[type="text"]').value = '';
+    form.querySelector('input[type="tel"]').value = '';
+    form.querySelector('textarea').value = '';
   }
 
   // Shopee redirect
