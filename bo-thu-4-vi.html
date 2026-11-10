@@ -334,7 +334,7 @@
         </div>
         <label class="age"><input type="checkbox" id="oAge"> Tôi xác nhận người nhận đã đủ 18 tuổi. Đã uống rượu bia thì không lái xe.</label>
         <button class="btn" id="btnOrder" type="submit" style="width:100%">Gửi đơn bộ thử 4 vị →</button>
-        <p class="small">Thông tin chỉ dùng để giao hàng. Cần hỏi trước? <a href="https://zalo.me/1167032561167541735" target="_blank" rel="noopener" onclick="vdTrack('Lead','LP Zalo truoc dat')">Nhắn Zalo</a>. Muốn chọn số chai khác: <a href="/#chon-goi" onclick="vdTrack(null,'LP -> home combo')">xem bảng giá đầy đủ</a>.</p>
+        <p class="small">Thông tin chỉ dùng để giao hàng. Cần hỏi trước? <a href="https://zalo.me/0775982251" target="_blank" rel="noopener" onclick="vdTrack('Lead','LP Zalo truoc dat')">Nhắn Zalo</a>. Muốn chọn số chai khác: <a href="/#chon-goi" onclick="vdTrack(null,'LP -> home combo')">xem bảng giá đầy đủ</a>.</p>
       </form>
       <div class="done" id="orderDone">
         <h3>Cảm ơn anh/chị, đơn đã gửi!</h3>
@@ -352,7 +352,7 @@
           <button type="button" class="btn-paid" onclick="paidQR()">Em đã chuyển khoản, nhắn Zalo xác nhận</button>
         </div>
         <p>Bên em sẽ nhắn Zalo hoặc gọi số <strong id="donePhone"></strong> để xác nhận đơn trong ngày.</p>
-        <a href="https://zalo.me/1167032561167541735" target="_blank" rel="noopener" onclick="vdTrack('Lead','LP Zalo sau dat')" class="btn-zalo">Theo dõi Zalo OA: nhận cách uống từng vị</a>
+        <a href="https://zalo.me/0775982251" target="_blank" rel="noopener" onclick="vdTrack('Lead','LP Zalo sau dat')" class="btn-zalo">Lưu Zalo shop: nhận cách uống từng vị</a>
       </div>
     </div>
   </div>
@@ -368,7 +368,7 @@
 
 <footer><div class="wrap">
   <p>⚠️ Rượu có cồn. Không bán cho người dưới 18 tuổi. Đã uống rượu bia không lái xe.</p>
-  <p>Viet Distillery · Hộ kinh doanh Giá Trị Việt · MST 8445545820-001 · 40/18 Đất Thánh, P. Tân Hòa, TP.HCM · Zalo 0775 982 251 · contact@vietdistillery.com</p>
+  <p>Viet Distillery · Hộ kinh doanh Giá Trị Việt · MST 8445545820-001 · Zalo 0775 982 251 · contact@vietdistillery.com</p>
   <p><a href="/">Trang chủ vietdistillery.com</a> · <a href="/#chinh-sach">Chính sách mua hàng</a></p>
 </div></footer>
 <a class="btn btn-sm float" href="#dat-hang" onclick="vdTrack(null,'LP float dat hang')">Đặt bộ thử</a>
@@ -487,7 +487,7 @@
     var m='Em đã chuyển khoản đơn '+payState.code+', số tiền '+vnd(payState.amount)+'.';
     try{ navigator.clipboard.writeText(m); alert('Đã sao chép nội dung. Dán vào khung chat Zalo rồi gửi giúp em nhé.'); }catch(e){}
     vdTrack('Lead','LP da chuyen khoan QR');
-    window.open('https://zalo.me/1167032561167541735','_blank');
+    window.open('https://zalo.me/0775982251','_blank');
   }
   renderPrice();
 </script>
